@@ -40,6 +40,8 @@ def convertToHex(decimal): # the function will take a decimal input as parameter
         convertToHex(decimal // 16)   # recursion if decimal is larger than 16
     print(getHexNum(decimal % 16), end = '') # Dividing the number successively by 16 and printing the remainder in reverse order.
 
+def convertToHex(binary): # convert from binary to hex
+
 
 def getHexNum(digit): # this function serves for convertToHex function. It will change every digit from decimal expression to hex expression
     if digit < 10:
@@ -102,6 +104,11 @@ option = input()
 if option == '1':
     print("You choose 1: Please enter your decimal number: ")
     decimal_number = input()
+    try:
+        val = int(decimal_number)
+    except ValueError:
+        print("That's not an int!")
+
     convertDectoOther(int(decimal_number))
 
 elif option == '2':
@@ -109,3 +116,5 @@ elif option == '2':
 
 else:
     print("INVALID, please try again")
+
+# find function overloading in python
