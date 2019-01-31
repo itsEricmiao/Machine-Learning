@@ -76,5 +76,36 @@ def get_digit(num): # this is a function that can get each digit of the number f
         return num % 10
 
 
-convertToHex(150)
+def convertDectoOther(decimal):
 
+    print("Binary: ", end = '')
+    convertToBinary(decimal)
+    print()
+    print("Ternary: ", end='')
+    convertToTernary(decimal)
+    print()
+    print("Quaternary: ", end='')
+    convertToQuaternary(decimal)
+    print()
+    print("Octal: ", end='')
+    convertToOctal(decimal)
+    print()
+    print("Hex: ", end='')
+    convertToHex(decimal)
+    print()
+
+
+print("Welcome to Eric's number system converter")
+print("Press 1 for converting decimal")
+print("Press 2 for converting binary")
+option = input()
+if option == '1':
+    print("You choose 1: Please enter your decimal number: ")
+    decimal_number = input()
+    convertDectoOther(int(decimal_number))
+
+elif option == '2':
+    print("You choose 2: Please enter your binary number: ")
+
+else:
+    print("INVALID, please try again")
