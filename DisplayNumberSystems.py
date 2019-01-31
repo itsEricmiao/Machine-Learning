@@ -3,7 +3,6 @@
 # Instructor: Nasser Jan
 # Name: Eric Miao
 
-
 # convertToBinary
 # convertToTernary
 # convertToQuaternary
@@ -18,23 +17,45 @@ def convertToBinary(decimal): # the function will take a decimal input as parame
     print(decimal % 2, end = '') # Dividing the number successively by 2 and printing the remainder in reverse order.
 
 
-def convertToTernary(decimal): # the function will take a decimal input as parameter and return the binary number
+def convertToTernary(decimal): # the function will take a decimal input as parameter and return the ternary number
     if decimal > 3:
-        convertToTernary(decimal // 3)   # recursion if decimal is larger than 1
-    print(decimal % 3, end = '') # Dividing the number successively by 2 and printing the remainder in reverse order.
+        convertToTernary(decimal // 3)   # recursion if decimal is larger than 3
+    print(decimal % 3, end = '') # Dividing the number successively by 3 and printing the remainder in reverse order.
 
 
-def convertToQuaternary(decimal): # the function will take a decimal input as parameter and return the binary number
+def convertToQuaternary(decimal): # the function will take a decimal input as parameter and return the quaternary number
     if decimal > 4:
-        convertToQuaternary(decimal // 4)   # recursion if decimal is larger than 1
-    print(decimal % 4, end = '') # Dividing the number successively by 2 and printing the remainder in reverse order.
+        convertToQuaternary(decimal // 4)   # recursion if decimal is larger than 4
+    print(decimal % 4, end = '') # Dividing the number successively by 4 and printing the remainder in reverse order.
 
 
-def convertToOctal(decimal): # the function will take a decimal input as parameter and return the binary number
+def convertToOctal(decimal): # the function will take a decimal input as parameter and return the octal number
     if decimal > 8:
-        convertToOctal(decimal // 8)   # recursion if decimal is larger than 1
-    print(decimal % 8, end = '') # Dividing the number successively by 2 and printing the remainder in reverse order.
+        convertToOctal(decimal // 8)   # recursion if decimal is larger than 8
+    print(decimal % 8, end = '') # Dividing the number successively by 8 and printing the remainder in reverse order.
 
+
+def convertToHex(decimal): # the function will take a decimal input as parameter and return the hex number
+    if decimal > 16:
+        convertToHex(decimal // 16)   # recursion if decimal is larger than 16
+    print(getHexNum(decimal % 16), end = '') # Dividing the number successively by 16 and printing the remainder in reverse order.
+
+
+def getHexNum(digit): # this function serves for convertToHex function. It will change every digit from decimal expression to hex expression
+    if digit < 10:
+        return digit
+    elif digit == 10:
+        return 'A'
+    elif digit == 11:
+        return 'B'
+    elif digit == 12:
+        return 'C'
+    elif digit == 13:
+        return 'D'
+    elif digit == 14:
+        return 'E'
+    elif digit == 15:
+        return 'F'
 
 
 # Step 2: Converting binary to other number systems
@@ -55,7 +76,5 @@ def get_digit(num): # this is a function that can get each digit of the number f
         return num % 10
 
 
-x = 1100
-
-convertToQuaternary(350)
+convertToHex(150)
 
