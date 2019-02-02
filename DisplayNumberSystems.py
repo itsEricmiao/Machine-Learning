@@ -169,7 +169,7 @@ elif option == '2':
     except ValueError:
         print("That's not an int!")
 
-elif option == '3': # this is a testing funtion
+elif option == '3': # this is a maintanance funtion
     bin = input()
     if(ifBinary(bin) == True):
         print("It is binary")
