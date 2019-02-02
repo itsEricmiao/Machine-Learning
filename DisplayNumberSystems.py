@@ -3,13 +3,6 @@
 # Instructor: Nasser Jan
 # Name: Eric Miao
 
-# convertToBinary
-# convertToTernary
-# convertToQuaternary
-# convertToOctal
-# convertToHex
-# convertToDec
-
 # Step 1: Converting decimal to other number systems
 def convertToBinary(decimal): # the function will take a decimal input as parameter and return the binary number
     if decimal > 1:
@@ -86,24 +79,24 @@ def convertDecToOther(decimal):
 
 
 # Step 2: Converting binary to other number systems
-def convertBinaryToDec(binary):
+def convertBinaryToDec(binary): #Binary to decimal converter
     binary = str(binary)
-    b = list(binary)
-    n = len(list(binary))
+    b = list(binary) # create a list from the number
+    n = len(list(binary)) # getting legth of the list
     decimal = 0
     hold = 0
     i = 0
     exp = n - 1
-    while (i < n):
+    while (i < n): #loop through the list and getting the x*2**exp for each decimal numbers
         x = int(b[i])
         quot = 2 ** exp
         hold = x * quot
         i += 1
         exp -= 1
-        decimal = decimal + hold
+        decimal = decimal + hold  #adding each number togther and we will get the final decimal number
     return decimal
 
-# for binary conversion: We convert binary to decimal and we use the funcions above to convert decimal to other number systems
+# We convert binary to decimal and we use the funcions above to convert decimal to other number systems
 def convertBinaryToTernary(binary):
     decimal = convertBinaryToDec(binary)
     convertToTernary(decimal)
@@ -139,6 +132,14 @@ def convertBinaryToOther(binary):
     print("Hex: ", end='')
     convertBinaryToHex(binary)
     print()
+def ifBinary(number):
+    binary = str(number)
+    a = list(binary)  # create a list from the number
+    for i in range (len(a)):
+        x = int(a[i])
+        if (x > 1):
+            return False
+    return True
 
 # the main function starts here:
 print("Welcome to Eric's number system converter")
@@ -160,11 +161,20 @@ elif option == '2':
     bin = input()
     try:
         val = int(bin)  # using try...except to make sure the input is number only
-        convertBinaryToOther(int(bin))
+        if (ifBinary(val) == True):
+            convertBinaryToOther(int(bin))
+        else:
+            print("That's not an int!")
+            exit()
     except ValueError:
         print("That's not an int!")
 
-
+elif option == '3': # this is a testing funtion
+    bin = input()
+    if(ifBinary(bin) == True):
+        print("It is binary")
+    elif(ifBinary(bin) == False):
+        print("It is NOT binary")
 
 else:
     print("INVALID, please try again")
