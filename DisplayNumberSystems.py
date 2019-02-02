@@ -40,8 +40,6 @@ def convertToHex(decimal): # the function will take a decimal input as parameter
         convertToHex(decimal // 16)   # recursion if decimal is larger than 16
     print(getHexNum(decimal % 16), end = '') # Dividing the number successively by 16 and printing the remainder in reverse order.
 
-def convertToHex(binary): # convert from binary to hex
-
 
 def getHexNum(digit): # this function serves for convertToHex function. It will change every digit from decimal expression to hex expression
     if digit < 10:
@@ -60,15 +58,6 @@ def getHexNum(digit): # this function serves for convertToHex function. It will 
         return 'F'
 
 
-# Step 2: Converting binary to other number systems
-def convertToDec(binary):
-    power = 0;
-    while binary > 1:
-        x = get_digit(binary)
-        binary = int(binary / 10)
-        print('The result is: ', + x*(2**power), ' Binary = ', binary)
-        power = power + 1
-
 
 def get_digit(num): # this is a function that can get each digit of the number from right to left
     if num < 10: # if the digit is less than 10, we just return the number since it is only 1 digit
@@ -78,8 +67,7 @@ def get_digit(num): # this is a function that can get each digit of the number f
         return num % 10
 
 
-def convertDectoOther(decimal):
-
+def convertDecToOther(decimal):
     print("Binary: ", end = '')
     convertToBinary(decimal)
     print()
@@ -97,6 +85,62 @@ def convertDectoOther(decimal):
     print()
 
 
+# Step 2: Converting binary to other number systems
+def convertBinaryToDec(binary):
+    binary = str(binary)
+    b = list(binary)
+    n = len(list(binary))
+    decimal = 0
+    hold = 0
+    i = 0
+    exp = n - 1
+    while (i < n):
+        x = int(b[i])
+        quot = 2 ** exp
+        hold = x * quot
+        i += 1
+        exp -= 1
+        decimal = decimal + hold
+    return decimal
+
+# for binary conversion: We convert binary to decimal and we use the funcions above to convert decimal to other number systems
+def convertBinaryToTernary(binary):
+    decimal = convertBinaryToDec(binary)
+    convertToTernary(decimal)
+
+def convertBinaryToQuaternary(binary):
+    decimal = convertBinaryToDec(binary)
+    convertToQuaternary(decimal)
+
+
+def convertBinaryToOctal(binary):
+    decimal = convertBinaryToDec(binary)
+    convertToOctal(decimal)
+
+
+def convertBinaryToHex(binary):
+    decimal = convertBinaryToDec(binary)
+    convertToHex(decimal)
+
+
+def convertBinaryToOther(binary):
+    #print("Decimal: ", end='')
+    print("Decimal: ", convertBinaryToDec(binary), end = '')
+    print()
+    print("Ternary: ", end='')
+    convertBinaryToTernary(binary)
+    print()
+    print("Quaternary: ", end='')
+    convertBinaryToQuaternary(binary)
+    print()
+    print("Octal: ", end='')
+    convertBinaryToOctal(binary)
+    print()
+    print("Hex: ", end='')
+    convertBinaryToHex(binary)
+    print()
+
+# the main function starts here:
 print("Welcome to Eric's number system converter")
 print("Press 1 for converting decimal")
 print("Press 2 for converting binary")
@@ -105,16 +149,27 @@ if option == '1':
     print("You choose 1: Please enter your decimal number: ")
     decimal_number = input()
     try:
-        val = int(decimal_number)
+        val = int(decimal_number) # using try...except to make sure the input is number only
+        convertDecToOther(int(decimal_number))
     except ValueError:
         print("That's not an int!")
 
-    convertDectoOther(int(decimal_number))
 
 elif option == '2':
     print("You choose 2: Please enter your binary number: ")
+    bin = input()
+    try:
+        val = int(bin)  # using try...except to make sure the input is number only
+        convertBinaryToOther(int(bin))
+    except ValueError:
+        print("That's not an int!")
+
+
 
 else:
     print("INVALID, please try again")
 
-# find function overloading in python
+
+
+
+
