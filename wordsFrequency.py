@@ -8,16 +8,13 @@ items = ["Liam", "Mason", "William", "Noah", "William", "James", "Sophia", "Loga
          "Amelia", "William", "Evelyn", "Abigail", "Olivia", "Ava", "Mason", "Isabella", "Noah", "William", "James",
          "Olivia", "Amelia", "Oliver", "William"]
 
-newList = []
-for i in range(len(items)-1):
-    j = i + 1
-    for j in range(len(items)):
-        if(items[i] == items[j]):
-            if items[i] in newList:
-                pass # do nothing
-            else:
-                newList.append(items[i])
-print(newList)
 
+def word_freq(list):
 
+    counts = dict()
+    for i in list:
+        counts[i] = counts.get(i, 0) + 1
+    print(counts)
+
+word_freq(items)
 # ascending
