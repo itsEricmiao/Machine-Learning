@@ -19,3 +19,5 @@ for i in range(len(items)-1):
                 newList.append(items[i])
 print(newList)
 
+
+# ascending
