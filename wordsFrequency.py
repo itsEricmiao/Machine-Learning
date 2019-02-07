@@ -14,7 +14,14 @@ def word_freq(list):
     counts = dict()
     for i in list:
         counts[i] = counts.get(i, 0) + 1
-    print(counts)
+    return counts # The word_freq() returns a dictionary of word counts to the main method.
 
-word_freq(items)
-# ascending
+
+def asc_word_freq(dict): # accepts dictionary of words’ counts
+    pass
+    # returns a dictionary of word counts in ascending order to the main method.
+
+# main function starts here
+print(word_freq(items))
+
+
