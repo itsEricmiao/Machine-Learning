@@ -38,17 +38,10 @@ def size_dict(d, n):
     elif(n < 0):
         return temp
     else:
-        sorted_d = sorted(dict.items(), key=operator.itemgetter(1), reverse=True)
-        iterator = iter(sorted_d)
-        for i in range(n):
-            print(next(iterator))
-
-
-def take(n, iterable):
-    #"Return first n items of the iterable as a list"
-    return list(islice(iterable, n))
-
-
+        target = {}
+        new_d = desc_word_freq(d)
+        target = new_d[:n]
+        return target
 
 
 # main function starts here
