@@ -17,11 +17,13 @@ def word_freq(list):
 
 
 def asc_word_freq(dict): # accepts dictionary of words’ counts
-    sorted_d = sorted(dict.items(), key=operator.itemgetter(0))
+    sorted_d = sorted(dict.items(), key=operator.itemgetter(1))
+    # NOTE: if we want to sort the dict by key, we simply change the val from 1 to 0
+
     return sorted_d
 
 def desc_word_freq(dict):  # accepts dictionary of words’ counts
-    sorted_d = sorted(dict.items(), key=operator.itemgetter(0), reverse=True)
+    sorted_d = sorted(dict.items(), key=operator.itemgetter(1), reverse=True)
     return sorted_d
     # returns a dictionary of word counts in ascending order to the main method.
 
@@ -34,12 +36,23 @@ def size_dict(d, n):
     elif(n < 0):
         return temp
     else:
-        
+        pass
+
 
 
 
 # main function starts here
+print("1. Name Frequency: ")
 print(word_freq(items))
+print('')
+
+print("2. Ascending Order Based On Keys")
 print(asc_word_freq(word_freq(items)))
+print('')
+
+print("3. Descending Order Based On Keys")
 print(desc_word_freq(word_freq(items)))
+print('')
+
+print("4. Returns a subset of dictionary with n most frequent words. ")
 print(size_dict(word_freq(items), 5))
