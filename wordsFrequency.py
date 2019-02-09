@@ -3,6 +3,9 @@
 # Instructor: Nasser Jan
 # Name: Eric Miao
 import operator
+from itertools import islice
+
+
 items = ["Liam", "Mason", "William", "Noah", "William", "James", "Sophia", "Logan", "Benjamin", "Mason", "Elijah",
          "Oliver", "Jacob", "Emma", "Olivia", "Ava", "William", "Isabella", "Oliver", "Sophia", "Mia", "Charlotte",
          "Amelia", "William", "Evelyn", "Abigail", "Olivia", "Ava", "Mason", "Isabella", "Noah", "William", "James",
@@ -30,13 +33,20 @@ def desc_word_freq(dict):  # accepts dictionary of words’ counts
 def size_dict(d, n):
     temp = dict()
     size = len(d)
-    print(size)
     if( n > size):
         return d
     elif(n < 0):
         return temp
     else:
-        pass
+        sorted_d = sorted(dict.items(), key=operator.itemgetter(1), reverse=True)
+        iterator = iter(sorted_d)
+        for i in range(n):
+            print(next(iterator))
+
+
+def take(n, iterable):
+    #"Return first n items of the iterable as a list"
+    return list(islice(iterable, n))
 
 
 
@@ -56,3 +66,4 @@ print('')
 
 print("4. Returns a subset of dictionary with n most frequent words. ")
 print(size_dict(word_freq(items), 5))
+print('')
