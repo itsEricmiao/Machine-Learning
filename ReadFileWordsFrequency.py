@@ -3,7 +3,24 @@
 # # Instructor: Nasser Jan
 # # Name: Eric Miao
 
-path = '/Users/ericmiao/Desktop/smu.txt'
-days_file = open(path,'r')
-a = days_file.read()
-print(a)
+
+import re
+def readfile(path):
+    days_file = open(path, 'r')  # input the file
+    mystr = days_file.read()
+    wordList = re.sub("[^\w]", " ", mystr).split()
+    return wordList
+
+def word_freq(list):
+    counts = dict()
+    for i in list:
+        counts[i] = counts.get(i, 0) + 1
+    return counts # The word_freq() returns a dictionary of word counts to the main method.
+
+
+#main function starts from here:
+path = '/Users/ericmiao/Desktop/Programming/Python/smu.txt' # getting the path to the smu.txt file
+a = readfile(path)
+b = word_freq(a)
+print(b)
+
