@@ -3,3 +3,7 @@
 # # Instructor: Nasser Jan
 # # Name: Eric Miao
 
+path = '/Users/ericmiao/Desktop/smu.txt'
+days_file = open(path,'r')
+a = days_file.read()
+print(a)
