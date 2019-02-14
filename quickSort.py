@@ -7,60 +7,63 @@
 import random
 import time
 
-def quickSort(alist):
-   quickSortHelper(alist,0,len(alist)-1)
-
-def quickSortHelper(alist,first,last):
-   if first<last:
-
-       splitpoint = partition(alist,first,last)
-
-       quickSortHelper(alist,first,splitpoint-1)
-       quickSortHelper(alist,splitpoint+1,last)
+def quickSort(myList):
+    quickSortHelper(myList, 0, len(myList) - 1)
 
 
-def partition(alist,first,last):
-   pivotvalue = alist[first]
+def quickSortHelper(myList, first, last):
+    if first < last:
+        split = partition(myList, first, last)
 
-   leftmark = first+1
-   rightmark = last
-
-   done = False
-   while not done:
-
-       while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
-           leftmark = leftmark + 1
-
-       while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
-           rightmark = rightmark -1
-
-       if rightmark < leftmark:
-           done = True
-       else:
-           temp = alist[leftmark]
-           alist[leftmark] = alist[rightmark]
-           alist[rightmark] = temp
-
-   temp = alist[first]
-   alist[first] = alist[rightmark]
-   alist[rightmark] = temp
+        quickSortHelper(myList, first, split - 1)
+        quickSortHelper(myList, split + 1, last)
 
 
-   return rightmark
+def partition(myList, first, last):
+    pivot = myList[first]
+
+    left = first + 1
+    right = last
+
+    done = False
+    while not done:
+
+        while left <= right and myList[left] <= pivot:
+            left = left + 1
+
+        while myList[right] >= pivot and right >= left:
+            right = right - 1
+
+        if right < left:
+            done = True
+        else:
+            temp = myList[left]
+            myList[left] = myList[right]
+            myList[right] = temp
+
+    temp = myList[first]
+    myList[first] = myList[right]
+    myList[right] = temp
+
+    return right
+
+
+def createRandomElements(n):
+    myList = []
+    for i in range(n):
+        random_num = random.randint(0, 400)  # the generated element is in range between 0-400
+        myList.append(random_num)
+    return myList
 
 
 # main function starts from here:
-x = int(input("Please type in the number of elements you want in an unsorted list: "))
-alist = []
-
-for i in range(x):
-    random_num = random.randint(1, 400)
-    alist.append(random_num)
-print("Unsorted list: ", alist)
-start = time.time()
-quickSort(alist)
-print("Sorted list: ", alist)
-end = time.time()
+x = int(input("Please type in the number of elements you want in an unsorted list: "))  # User can input the number of random number that the program gonna generate
+sample_list = createRandomElements(x)
+print("Unsorted list: ", sample_list)
+start = time.time()  # start time records the time that sorting starts
+quickSort(sample_list)
+print("Sorted list: ", sample_list)
+end = time.time()  # end time records the time that sorting ejd
 total_time = end - start
 print("The number of elements = ", x)
 print("Total sorting time = : ", total_time)
