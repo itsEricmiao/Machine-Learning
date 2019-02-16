@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b7139a8-78b3-49bc-9968-b3e672710420" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ReadFileWordsFrequency.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReadFileWordsFrequency.py" afterDir="false" />
-    </list>
+    <list default="true" id="1b7139a8-78b3-49bc-9968-b3e672710420" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ReadFileWordsFrequency.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="252">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -296,23 +294,22 @@
       <workItem from="1550176511693" duration="65000" />
       <workItem from="1550180427022" duration="122000" />
       <workItem from="1550180920964" duration="708000" />
-      <workItem from="1550185453805" duration="948000" />
+      <workItem from="1550185453805" duration="1500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34762000" />
+    <option name="totallyTimeSpent" value="35314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="240" y="119" width="1327" height="691" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26692608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33555928" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33555928" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -390,8 +387,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ReadFileWordsFrequency.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="252">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
