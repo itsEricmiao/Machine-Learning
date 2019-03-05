@@ -1,6 +1,7 @@
 #!/usr/bin/perl
+$input = <STDIN>;
 #	first name and last name: John Quincy Adams
-	
+
 #	The regular expression should determine the input data is male or female: 
 	
 #	The regular expression should check the input data is street address: 5454 Amesbury Dr
@@ -8,8 +9,14 @@
 #	The regular expression matches the city, state and zip code: Dallas, TX 75206
 	
 #	The regular expression should match the email address 
-	
+	if ($input == /@/ )
+	{
+		print "It is an email address: $input";
+	}else {
+		print "It is NOT an email address: $input";
+	}
 #	The regular expression should match the phone number
+
 	
 #	The regular expression for currency
 	
