@@ -25,7 +25,7 @@ def desc_word_freq(dict):  # accepts dictionary of words’ counts
 def size_dict(d, n):
     temp = dict()
     size = len(d)
-    if( n > size): # if the n is out of range, we return the whole dict
+    if(n > size): # if the n is out of range, we return the whole dict
         return d
     elif(n < 0): # if the n is out of range, we return an empty dict
         return temp
@@ -54,5 +54,5 @@ print(desc_word_freq(word_freq(items)))
 print('')
 
 print("4. Returns a subset of dictionary with n most frequent words. ")
-print(size_dict(word_freq(items), -1))
+print(size_dict(word_freq(items), 3))
 print('')
