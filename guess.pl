@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 $input = <STDIN>;
+
 #	first name and last name: John Quincy Adams
 	if($input =~ /^[A-Z][a-z]+\s[A-Z][a-z]+$/g)
 	{
@@ -94,11 +95,11 @@ $input = <STDIN>;
 	}
 	
 #	The regular expression for URL
-	if ($input =~ /^(http(?:s)?\:\/\/[a-zA-Z0-9]+(?:(?:\.|\-)[a-zA-Z0-9]+)+(?:\:\d+)?(?:\+/[\w\-]+)*(?:\/?|\/\w+\.[a-zA-Z]{2,4}(?:\?[\w]+\=[\w\-]+)?)?(?:\&[\w]++\=[\w\-]+)*)$/)
-		{
-			print "Input is: $input";
-			print "It looks like a URL.";
-		}
+#	if ($input =)
+#		{
+#			print "Input is: $input";
+#			print "It looks like a URL.";
+#		}
 #	The regular expression for IP Address
 	if ($input =~ /[0-9]{3}(.)[0-9]{3}(.)[0-9]{3}(.)[0-9]{1}/ )
 	{
