@@ -7,9 +7,9 @@ $input = <STDIN>;
 #	The regular expression should check the input data is street address: 5454 Amesbury Dr
 	
 #	The regular expression matches the city, state and zip code: Dallas, TX 75206
-	
+
 #	The regular expression should match the email address 
-	if ($input == /@/ )
+	if ($input == ~/(@)/ )
 	{
 		print "It is an email address: $input";
 	}else {
@@ -17,11 +17,15 @@ $input = <STDIN>;
 	}
 #	The regular expression should match the phone number
 
-	
 #	The regular expression for currency
 	
 #	The regular expression for Monetary Input: $55.00 or $0.75, etc 
-	
+	if ($input == ~/$/ )
+	{
+		print "It is a Currency: $input";
+	}else {
+		print "It is NOT an Currency: $input";
+	}
 #	The regular expression for debit or credit card number
 	
 #	The regular expression for date
