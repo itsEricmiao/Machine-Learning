@@ -24,7 +24,13 @@ private ArrayList<String> choices = new ArrayList<String>();
         super.display();
         for(int i = 0; i < choices.size(); i++)
         {
-            System.out.println(choices.get(i));
+            int counter = i+1;
+            System.out.println(counter + ": " + choices.get(i));
         }
+    }
+
+    public String getChoice(int index)
+    {
+        return choices.get(index);
     }
 }

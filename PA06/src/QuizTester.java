@@ -14,34 +14,35 @@ public class QuizTester {
     {
         System.out.println("Please enter your quiz question description");
         String inputQuestion = inputScan.nextLine();
-        choice.addChoice(inputQuestion,false);
+        choice.setQuestion(inputQuestion);
 
-
-        System.out.println("Please enter your quiz choices to the question");
         for(int i = 0 ; i < 4; i++)
         {
             int counter = i+1;
-            System.out.println(counter +":");
+            System.out.println("Please enter your quiz choices to the question");
+            System.out.print(counter +":");
             String inputChoice = inputScan.nextLine();
 
-            System.out.println("Is this the correct answer? (Y/N)");
-            String ifAnswerStr = inputScan.nextLine();
-            if(ifAnswerStr == "Y")
+            System.out.println("Is this the correct answer? (Type 1 as Yes and 2 as NO)");
+            int ifAnswerStr = inputScan.nextInt();
+            if(ifAnswerStr == 1)
             {
                 choice.addChoice(inputChoice, true);
-            }else if(ifAnswerStr == "N")
+            }else if(ifAnswerStr == 2)
             {
                 choice.addChoice(inputChoice, false);
             }else
                 {
                     System.out.print("Invalid input, please try again");
+                    break;
                 }
+            inputScan.nextLine();
         }
 
         choice.display();
         System.out.print("Your Answer: ");
-        int userAnswer = inputScan.nextInt();
-        System.out.println("Your choice is: "+userAnswer);
-//        choice.validateAnswer(userAnswer);
+        int userChoose = inputScan.nextInt();
+        String userAnswer = choice.getChoice(userChoose-1);
+        choice.validateAnswer(userAnswer);
     }
 }

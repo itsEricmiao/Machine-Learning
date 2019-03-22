@@ -23,7 +23,7 @@ public class QuizQuestion {
         if(input == answer)
         {
             System.out.println("True!");
-        }
+        }else
         System.out.println("Wrong...");
     }
 
