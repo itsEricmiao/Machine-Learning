@@ -1,22 +1,33 @@
-
-
 public class QuizQuestion {
     private String question;
     private  String answer;
 
-    public void quizQuestion(String input)
+    public void QuizQuestion()
     {
+        question = null;
+        answer = null;
 
     }
 
-    public void setAnswer(String input)
+    public void setQuestion(String inputStr)
     {
+        question = inputStr;
+
+    }
+
+    public void setAnswer(String inputStr)
+    {
+        answer = inputStr;
 
     }
 
     boolean validateAnswer(String input)
     {
-        return true;
+        if(input == answer)
+        {
+            return true;
+        }
+        return false;
     }
 
     public void display()

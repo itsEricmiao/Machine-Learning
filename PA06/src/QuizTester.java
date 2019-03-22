@@ -4,4 +4,9 @@ public class QuizTester {
     {
         System.out.println("HW");
     }
+
+    public void presentQuestion(ChoiceQuestion choice)
+    {
+        
+    }
 }
