@@ -6,33 +6,30 @@ public class QuizQuestion {
     {
         question = null;
         answer = null;
-
     }
 
     public void setQuestion(String inputStr)
     {
         question = inputStr;
-
     }
 
     public void setAnswer(String inputStr)
     {
         answer = inputStr;
-
     }
 
-    boolean validateAnswer(String input)
+    public void validateAnswer(String input)
     {
         if(input == answer)
         {
-            return true;
+            System.out.println("True!");
         }
-        return false;
+        System.out.println("Wrong...");
     }
 
     public void display()
     {
-
+        System.out.println(question);
     }
 
 }
