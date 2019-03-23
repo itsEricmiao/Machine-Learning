@@ -12,8 +12,8 @@ public class QuizTester {
     public static void main(String[] args)
     {
         System.out.println("Welcome to Eric's Quiz app\n");
-        ChoiceQuestion question = new ChoiceQuestion();
-        presentQuestion(question);
+            ChoiceQuestion question = new ChoiceQuestion();
+            presentQuestion(question);
     }
 
     /*
