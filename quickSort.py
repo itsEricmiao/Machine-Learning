@@ -1,5 +1,5 @@
 # CSE-3353 Spring 2019
-# PA05: Quick Sort
+# PA01: Quick Sort
 # Instructor: Dan Lorts
 # Name: Eric Miao
 
