@@ -20,9 +20,11 @@ employees = [
   { "empno": 7654, "name": "Martin", "job": "salesman", 	"manager": 7698, "hiredate": "28-SEP-1981", "sale": 1250, "comm": 1400, 	"deptname": "SALES"}
 ];
 
-print(employees[1])
+for x in employees:
+    temp = dict(x)
+    print(temp.get("job"))
 
-print(employees)
+#print(employees)
 def ifSamePosition(x):
     if x == "manager":
         return True
