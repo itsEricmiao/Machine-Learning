@@ -22,16 +22,10 @@ employees = [
 
 for x in employees:
     temp = dict(x)
-    print(temp.get("job"))
+    if temp.get("job") == "manager":
+        print(x)
 
-#print(employees)
-def ifSamePosition(x):
-    if x == "manager":
-        return True
-    else:
-        return False
+    if temp.get("job") == "clerk":
+        print(x)
 
-result = filter(ifSamePosition,employees)
-
-for x in result:
-  print(x)
+    #if temp
