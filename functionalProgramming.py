@@ -20,5 +20,16 @@ employees = [
   { "empno": 7654, "name": "Martin", "job": "salesman", 	"manager": 7698, "hiredate": "28-SEP-1981", "sale": 1250, "comm": 1400, 	"deptname": "SALES"}
 ];
 
+print(employees[1])
 
 print(employees)
+def ifSamePosition(x):
+    if x == "manager":
+        return True
+    else:
+        return False
+
+result = filter(ifSamePosition,employees)
+
+for x in result:
+  print(x)
