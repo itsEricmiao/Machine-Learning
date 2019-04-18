@@ -3,6 +3,9 @@
 # Instructor: Naseer Jan
 # Name: Eric Miao
 
+import functools
+
+#employees is a set of list that contains employement infomation
 employees = [
   { "empno": 7369, "name": "Smith",  "job": "clerk", 		"manager": 7902, "hiredate": "17-DEC-1980", "sale": 800,  "comm": 0, 		"deptname": "RESEARCH"},
   { "empno": 7499, "name": "Allen",  "job": "salesman", 	"manager": 7698, "hiredate": "20-FEB-1981", "sale": 1600, "comm": 300, 		"deptname": "SALES"},
@@ -21,26 +24,31 @@ employees = [
 ];
 
 
+# Each of the GETTER below will translate the input parameter (x) into dictionary and get particular row from the employees list
 
 def get_managers(x):
     temp = dict(x)
     if temp.get("job") == "manager":
         return temp.get("sale")
 
+
 def get_salesmen(x):
     temp = dict(x)
     if temp.get("job") == "salesman":
         return temp.get("sale")
+
 
 def get_analysts(x):
     temp = dict(x)
     if temp.get("job") == "analyst":
         return temp.get("sale")
 
+
 def get_clerks(x):
     temp = dict(x)
     if temp.get("job") == "clerk":
         return temp.get("sale")
+
 
 def get_president(x):
     temp = dict(x)
@@ -48,14 +56,23 @@ def get_president(x):
         return temp.get("sale")
 
 
-all_manager = list(filter(get_managers,employees))
-all_clerk = list(filter(get_clerks,employees))
-all_analyst = list(filter(get_analysts,employees))
-all_salesman = list(filter(get_salesmen,employees))
-all_president = list(filter(get_president,employees))
+#The fileter function below will get paticular rows and store them into a list
+all_manager = list(filter(get_managers, employees))
+all_clerk = list(filter(get_clerks, employees))
+all_analyst = list(filter(get_analysts, employees))
+all_salesman = list(filter(get_salesmen, employees))
+all_president = list(filter(get_president, employees))
 
 for i in all_clerk:
-    print (i)
+    print(i)
 
 
-#map(aFunction, aSequence)
+def testing(x):
+    temp = dict(x)
+    return temp.get("sale")
+
+
+for i in all_clerk:
+    print(map(testing, i))
+    print(i)
+
