@@ -20,12 +20,42 @@ employees = [
   { "empno": 7654, "name": "Martin", "job": "salesman", 	"manager": 7698, "hiredate": "28-SEP-1981", "sale": 1250, "comm": 1400, 	"deptname": "SALES"}
 ];
 
-for x in employees:
+
+
+def get_managers(x):
     temp = dict(x)
     if temp.get("job") == "manager":
-        print(x)
+        return temp.get("sale")
 
+def get_salesmen(x):
+    temp = dict(x)
+    if temp.get("job") == "salesman":
+        return temp.get("sale")
+
+def get_analysts(x):
+    temp = dict(x)
+    if temp.get("job") == "analyst":
+        return temp.get("sale")
+
+def get_clerks(x):
+    temp = dict(x)
     if temp.get("job") == "clerk":
-        print(x)
+        return temp.get("sale")
 
-    #if temp
+def get_president(x):
+    temp = dict(x)
+    if temp.get("job") == "president":
+        return temp.get("sale")
+
+
+all_manager = list(filter(get_managers,employees))
+all_clerk = list(filter(get_clerks,employees))
+all_analyst = list(filter(get_analysts,employees))
+all_salesman = list(filter(get_salesmen,employees))
+all_president = list(filter(get_president,employees))
+
+for i in all_clerk:
+    print (i)
+
+
+#map(aFunction, aSequence)
