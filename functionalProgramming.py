@@ -23,6 +23,18 @@ employees = [
   { "empno": 7654, "name": "Martin", "job": "salesman", 	"manager": 7698, "hiredate": "28-SEP-1981", "sale": 1250, "comm": 1400, 	"deptname": "SALES"}
 ];
 
+# This function will get "sale" number from each row/set from the employees list
+def get_sale(x):
+    temp = dict(x)
+    return temp.get("sale")
+
+print("Step I: Using map to get all sale number")
+j = map(get_sale, employees)
+for i in j:
+    print(i)
+print()
+
+
 
 # Each of the GETTER below will translate the input parameter (x) into dictionary and get particular row from the employees list
 
@@ -57,22 +69,46 @@ def get_president(x):
 
 
 #The fileter function below will get paticular rows and store them into a list
+print("Step II: Using filter function to sort all employees by job title")
 all_manager = list(filter(get_managers, employees))
 all_clerk = list(filter(get_clerks, employees))
 all_analyst = list(filter(get_analysts, employees))
 all_salesman = list(filter(get_salesmen, employees))
 all_president = list(filter(get_president, employees))
+print("Managers: ")
+for i in all_manager:
+    print(i)
+print()
 
+print("Clerks: ")
 for i in all_clerk:
     print(i)
+print()
 
-
-def testing(x):
-    temp = dict(x)
-    return temp.get("sale")
-
-
-for i in all_clerk:
-    print(map(testing, i))
+print("Analysts: ")
+for i in all_analyst:
     print(i)
+print()
+
+print("Salesmen: ")
+for i in all_salesman:
+    print(i)
+print()
+
+print("President: ")
+for i in all_president:
+    print(i)
+print()
+
+
+print("Step III: Using reduce function to ")
+import functools
+j = list (map(get_sale, employees))
+
+
+
+
+
+
+
 
