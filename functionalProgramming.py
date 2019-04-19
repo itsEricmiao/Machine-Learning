@@ -101,9 +101,22 @@ for i in all_president:
 print()
 
 
-print("Step III: Using reduce function to ")
-import functools
-j = list (map(get_sale, employees))
+print("Step III: Using reduce function to get average sale per person")
+#using reduce function from functools
+sales = list(map(get_sale, employees))
+total_sales = functools.reduce(lambda x,y:x+y,sales)
+average_sale = total_sales/employees.__len__()
+print("The average sale per person is ", average_sale)
+print()
+
+print("Step IV: Using map + filter + reduce function to get all salesman's average sales")
+all_salesman = list(filter(get_salesmen, employees))
+sales_salesman = list(map(get_sale, all_salesman))
+total_sales_salesman = functools.reduce(lambda x,y:x+y,sales_salesman)
+average_sale_salesman = total_sales_salesman/sales_salesman.__len__()
+print("The average sale for each salesman is ", average_sale_salesman)
+
+
 
 
 
